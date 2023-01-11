@@ -16,6 +16,8 @@ function App() {
           <li>To "publish" the app: <pre>npm run build</pre> <pre>npm run deploy</pre></li>
 
           <li>The app will be available at <pre>https:/your.domain/app</pre></li>
+
+          <li>You will need a <code>.env</code> file with this content <pre>REACT_APP_ROOT_PATH = localhost/app</pre></li>
         </ul>
       </section>
 
