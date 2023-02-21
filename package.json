@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "package": "node compile",
     "dev": "npx nodemon ./bin/www",
     "start": "node ./bin/www"
   },
@@ -11,5 +12,8 @@
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "morgan": "~1.9.1"
+  },
+  "devDependencies": {
+    "nexe": "^4.0.0-rc.2"
   }
 }

@@ -1,4 +1,3 @@
-import logo from './logo.svg'
 import './App.css'
 
 
@@ -27,7 +26,7 @@ function App() {
         <span> &rarr; </span>
       </footer>
     </div>
-  );
+  )
 }
 
 
