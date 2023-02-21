@@ -1,3 +1,5 @@
+import Serial from './Serial'
+
 import './App.css'
 
 
@@ -18,6 +20,10 @@ function App() {
 
           <li>You will need a <code>.env</code> file with this content <pre>REACT_APP_ROOT_PATH = localhost/app</pre></li>
         </ul>
+      </section>
+
+      <section>
+        <Serial />
       </section>
 
       <footer>
