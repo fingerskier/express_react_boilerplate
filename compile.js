@@ -1,7 +1,7 @@
 const { compile } = require('nexe')
 
 compile({
-  input: './bin/www',
+  input: './bin/cardinal',
   build: true, //required to use patches
   // patches: [
   //   async (compiler, next) => {

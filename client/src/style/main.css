@@ -1,0 +1,84 @@
+@keyframes blinker {
+  50% {
+    filter: brightness(80%);
+  }
+}
+
+
+.main {
+  position: relative;
+  display: inline-block;
+  position: absolute;
+  background-color: white;
+  
+  left: 50vw;
+  top: 50vh;
+  transform: translate(-50%, -50%);
+}
+
+.main .clock {
+  position: relative;
+  border-radius: 50%;
+  width: 40vw;
+  height: 40vw;
+  transform: rotate(-290deg);
+  transform-origin: center;
+}
+
+.main .clock h1 span {
+  color: black;
+  font: 36px Monaco, MonoSpace;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40vw;
+  height: 40vw;
+  transform-origin: center;
+}
+
+.main .clock h1 span:first-child {
+  color: yellow;
+}
+
+.main .clock h1 span:last-child {
+  color: white;
+  font-weight: 900;
+}
+
+
+.main .control.button {
+  position: relative;
+  left: 50%;
+  bottom: -5rem;
+  transform: translate(-50%);
+  z-index: 9;
+}
+
+
+.main .marker {
+  position: relative;
+  display: inline-block;
+  background-color: white;
+  width: 10vw;
+  height: 10vh;
+  left: 50%;
+  border-radius: 1rem;
+  transform: translate(-50%, 25%);
+
+  animation: blinker 2s linear infinite;
+  opacity: 0.35;
+  
+  z-index: 3;
+}
+
+
+.main .underlay {
+  position: absolute;
+  width: 60vw;
+  height: 60vw;
+  left: 50%;
+  top: 37.5%;
+  transform: translate(-50%, -38%);
+  
+  z-index: 0;
+}

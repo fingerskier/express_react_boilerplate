@@ -1,0 +1,16 @@
+.connected {
+  border: thin solid #00F;
+}
+
+.transmitting {
+  border: thick outset #0F0;
+}
+
+
+.device.settings {
+  background-color: whitesmoke;
+  border-radius: 1rem;
+  border: thin dotted steelblue;
+  margin: 1rem;
+  padding: 1rem;
+}

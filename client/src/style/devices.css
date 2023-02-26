@@ -1,0 +1,14 @@
+.connector {
+  margin: 1rem;
+  padding: 1rem;
+
+  border-radius: 1rem 0.3rem;
+}
+
+.connected {
+  border: thin solid #00F;
+}
+
+.transmitting {
+  border: thick outset #0F0;
+}

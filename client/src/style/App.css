@@ -1,0 +1,49 @@
+* {
+  font-size: 20px;
+}
+
+button {
+  margin: 0.2rem 0.5rem;
+  padding: 0.8rem 1.4rem;
+
+  border: thick outset #AAA;
+  border-radius: 1rem 0.8rem;
+
+  font-size: 1.4rem;
+}
+button:active {
+  border: thick inset #AAA;
+}
+
+.upper {
+  top: 0.5vh;
+}
+
+.lower {
+  bottom: 0.5vh;
+}
+
+.left {
+  left: 0.5vw;
+}
+
+.right {
+  right: 0.5vw;
+}
+
+
+.upper.left {
+  border-radius: 0.5rem 1rem 3rem 1rem;
+}
+
+.upper.right {
+  border-radius: 1rem 0.5rem 1rem 3rem;
+}
+
+.lower.left {
+  border-radius: 1rem 3rem 1rem 1rem;
+}
+
+.lower.right {
+  border-radius: 3rem 1rem 1rem 1rem;
+}

@@ -1,38 +1,37 @@
-import Serial from './Serial'
+import Devices from './component/Devices'
+import Main from './component/Main'
+import Panel from './component/Panel'
+import Settings from './component/Settings'
+import useLocalStorage from './hook/useLocalStorage'
 
-import './App.css'
+import './style/App.css'
+import devicesIcon from './img/devices.png'
+import settingsIcon from './img/settings.png'
+import dataIcon from './img/data.png'
+import aboutIcon from './img/about.png'
 
 
 function App() {
-  return (
-    <div>
-      <header>
-        <h1>Express React Boilerplate</h1>
-      </header>
+  const [time, setTime] = useLocalStorage(' cardinal-main-time', null)
 
-      <section>
-        <ul>
-          <li>Edit the dev app in <pre>/client</pre></li>
-
-          <li>To "publish" the app: <pre>npm run build</pre> <pre>npm run deploy</pre></li>
-
-          <li>The app will be available at <pre>https:/your.domain/app</pre></li>
-
-          <li>You will need a <code>.env</code> file with this content <pre>REACT_APP_ROOT_PATH = localhost/app</pre></li>
-        </ul>
-      </section>
-
-      <section>
-        <Serial />
-      </section>
-
-      <footer>
-        <span> &larr; </span>
-        
-        <span> &rarr; </span>
-      </footer>
-    </div>
-  )
+  return (<>
+    <Main time={time} />
+    
+    <Panel classes="upper left" icon={devicesIcon} title="Devices">
+      <Devices />
+    </Panel>
+    
+    <Panel classes="lower left" icon={dataIcon} title="Data">
+      <div>Account & Data</div>
+    </Panel>
+    
+    <Panel classes="upper right" icon={settingsIcon} title="Settings" time={time}>
+      <Settings time={time} setTime={setTime} />
+    </Panel>
+    
+    <Panel classes="lower right" icon={aboutIcon} title="About">
+    </Panel>
+  </> )
 }
 
 
