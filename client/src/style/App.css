@@ -7,13 +7,33 @@ button {
   padding: 0.8rem 1.4rem;
 
   border: thick outset #AAA;
-  border-radius: 1rem 0.8rem;
+  /* border-radius: 1rem 0.8rem; */
 
-  font-size: 1.4rem;
+  font-size: 1rem;
 }
 button:active {
   border: thick inset #AAA;
 }
+
+li {
+  list-style-type: none;
+}
+
+
+#status-bar {
+  position: fixed;
+  display: inline-block;
+  font-size: 32px;
+  font-weight: 900;
+  top: 1rem;
+  left: 50vw;
+  transform: translate(-50%);
+  
+  border: thick outset #F006;
+  border-radius: 1rem;
+  padding: 0.5rem 2rem;
+}
+
 
 .upper {
   top: 0.5vh;
@@ -31,7 +51,7 @@ button:active {
   right: 0.5vw;
 }
 
-
+/* 
 .upper.left {
   border-radius: 0.5rem 1rem 3rem 1rem;
 }
@@ -46,4 +66,4 @@ button:active {
 
 .lower.right {
   border-radius: 3rem 1rem 1rem 1rem;
-}
+} */

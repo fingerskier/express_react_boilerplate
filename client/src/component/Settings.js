@@ -30,8 +30,9 @@ export default function({time, setTime}) {
     <button onClick={E=>setTime(preTime)}>Set Time</button>
     
     <ul>
-      {devices?.map
-        ? devices.map((X,I)=>{
+      {devices
+        ? Object.keys(devices).map((key,I)=>{
+            const X = devices[key]
             let content = <></>
             
             

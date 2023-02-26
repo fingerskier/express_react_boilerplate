@@ -15,9 +15,9 @@ export default function() {
   
   const connect = async(deviceType)=>{
     if (!window.cardinal_device) window.cardinal_device = {}
-
+    
     let connectedDevice, deviceID
-
+    
     console.log('CONNECT', deviceType)
     
     if (deviceType === 5) {
@@ -52,14 +52,15 @@ export default function() {
     }, T)
     
     
-    setDevices(Object.keys(window.cardinal_device).map(key=>{
-      return window.cardinal_device[key]
-    }))
+    setDevices(window.cardinal_device)
+    // setDevices(Object.keys(window.cardinal_device).map(key=>{
+    //   return window.cardinal_device[key]
+    // }))
   }
   
   
   const disconnect = async(index)=>{
-    const thisDevice = devices[index]
+    const thisDevice = get(index)
     
     try {
       await thisDevice.disconnect()
@@ -69,7 +70,7 @@ export default function() {
     
     delete devices[index]
     
-    setDevices([...devices])
+    setDevices({...devices})
   }
   
   
@@ -83,10 +84,8 @@ export default function() {
   
   
   useEffect(() => {
-    if (window.cardinal_device) {
-      setDevices(Object.keys(window.cardinal_device).map(key=>{
-        return window.cardinal_device[key]
-      }))
+    if (!window.cardinal_device && Object.keys(devices).length) {
+      window.cardinal_device = devices
     }
   }, [])
   

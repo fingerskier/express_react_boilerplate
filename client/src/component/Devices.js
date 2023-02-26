@@ -9,6 +9,14 @@ import '../style/devices.css'
 export default function() {
   const {connect, devices} = useDevices()
   
+
+  function Device(key,I) {
+    console.log('CONX:Device', key, I)
+
+    return <li key={I}>
+      <Connector ID={key} />
+    </li>
+  }
   
   return ( <div>
     Select the type of device to connect:
@@ -23,13 +31,8 @@ export default function() {
     
     Devices:
     <ul>
-      {devices?.map
-        ? devices.map((X,I)=><li>
-          <Connector
-            device={window.cardinal_device[X.id]}
-            key={I}
-          />
-        </li>)
+      {devices
+        ? Object.keys(devices).map(Device)
         : <></>
       }
     </ul>

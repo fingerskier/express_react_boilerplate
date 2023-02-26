@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import Devices from './component/Devices'
 import Main from './component/Main'
 import Panel from './component/Panel'
@@ -12,12 +13,24 @@ import aboutIcon from './img/about.png'
 
 
 function App() {
+  const [status, setStatus] = useLocalStorage('cardinal-status', 'Cardinal Lite')
   const [time, setTime] = useLocalStorage(' cardinal-main-time', null)
-
+  
+  
   return (<>
-    <Main time={time} />
+    <div id="status-bar">{status}</div>
     
-    <Panel classes="upper left" icon={devicesIcon} title="Devices">
+    <Main
+      time={time}
+    />
+    
+    <Panel
+      status={status}
+      setStatus={setStatus}
+      classes="upper left"
+      icon={devicesIcon}
+      title="Devices"
+    >
       <Devices />
     </Panel>
     
@@ -25,7 +38,14 @@ function App() {
       <div>Account & Data</div>
     </Panel>
     
-    <Panel classes="upper right" icon={settingsIcon} title="Settings" time={time}>
+    <Panel
+      status={status}
+      setStatus={setStatus}
+      classes="upper right"
+      icon={settingsIcon}
+      title="Settings"
+      time={time}
+    >
       <Settings time={time} setTime={setTime} />
     </Panel>
     

@@ -36,7 +36,7 @@ export default function({element, index}) {
             <br />
             <button onClick={E=>connect(device.type, device.name)}>Reconnect</button>
             
-            <button onClick={E=>disconnect(device)}>Disconnect</button>
+            <button onClick={E=>disconnect(device.id)}>Disconnect</button>
           </div>
         </li>
       : <></>

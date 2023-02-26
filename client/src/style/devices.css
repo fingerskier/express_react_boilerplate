@@ -1,12 +1,16 @@
 .connector {
-  margin: 1rem;
-  padding: 1rem;
+  margin: 0.5rem;
+  padding: 0.2rem;
 
   border-radius: 1rem 0.3rem;
 }
 
 .connected {
   border: thin solid #00F;
+}
+
+.disconnected {
+  border: thick double red;
 }
 
 .transmitting {

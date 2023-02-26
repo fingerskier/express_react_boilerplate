@@ -8,8 +8,8 @@ import '../style/main.css'
 
 export default function({time}) {
   const startAngle = 60
-
-  const {devices} = useDevices()
+  
+  const {devices, get} = useDevices()
   
   const [clockElements, setClockElements] = useState([])
   const [rotation, setRotation] = useState(startAngle)
@@ -22,8 +22,6 @@ export default function({time}) {
   
   
   useEffect(() => {
-    console.log('RUNNING?', running)
-
     if (running) {
       let fullTime = 60 * 1000 * clockElements[clockElements.length-1]
       
@@ -31,9 +29,14 @@ export default function({time}) {
       let dRotate = 360 / (fullTime / runningInterval)
       
       
-      for (let dev of devices) {
-        dev.start()
-        console.log('START', dev)
+      for (let key in devices) {
+        const dev = get(key)
+
+        console.log('RUN', dev)
+        if (dev?.start) {
+          dev.start()
+          console.log('START', dev)
+        }
       }
       
       
@@ -46,9 +49,13 @@ export default function({time}) {
         if (T >= fullTime) clearInterval(timer)
       }, runningInterval);
     } else {
-      for (let dev of devices) {
-        dev.stop()
-        console.log('STOP', dev)
+      for (let key in devices) {
+        const dev = get(key)
+        
+        if (dev?.stop) {
+          dev.stop()
+          console.log('STOP', dev)
+        }
       }
       
       clearInterval(timer)
